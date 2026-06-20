@@ -1,0 +1,1 @@
+> Move `nurl` installation from configuration.nix to dms.nix
