@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      <home-manager/nixos>
 
       ./modules/flatpak.nix
       ./modules/vscode.nix
@@ -64,6 +65,7 @@
     extraGroups = [ "networkmanager" "wheel" ];
     # packages = with pkgs; [];
   };
+  home-manager.users.zayaan = import ./modules/home.nix;
 
   # Run `nixos-rebuild switch` without sudo
   nix.settings.trusted-users = [ "root" "@wheel" ];
