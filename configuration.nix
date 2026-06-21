@@ -17,7 +17,6 @@
       ./modules/file-explorer.nix
       ./modules/dms.nix
       ./modules/niri.nix
-      ./modules/learn-hacking.nix
       ./modules/adguard-home.nix
       ./modules/utilities.nix
       ./modules/android-development.nix

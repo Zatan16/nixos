@@ -5,6 +5,7 @@
 
   imports = [
     ./modules/home/games.nix
+    ./modules/home/learn-hacking.nix
   ];
 
   home.packages = with pkgs; [
