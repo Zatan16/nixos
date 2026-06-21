@@ -14,7 +14,6 @@
       ./modules/vscode.nix
       ./modules/gnome-keyring.nix
       ./modules/dconf.nix
-      ./modules/games.nix
       ./modules/file-explorer.nix
       ./modules/dms.nix
       ./modules/niri.nix
@@ -65,7 +64,7 @@
     extraGroups = [ "networkmanager" "wheel" ];
     # packages = with pkgs; [];
   };
-  home-manager.users.zayaan = import ./modules/home.nix;
+  home-manager.users.zayaan = import ./home.nix;
 
   # Run `nixos-rebuild switch` without sudo
   nix.settings.trusted-users = [ "root" "@wheel" ];
