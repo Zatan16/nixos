@@ -6,5 +6,7 @@
   imports = [
     ./modules/home/games.nix
     ./modules/home/learn-hacking.nix
+    ./modules/home/utilities.nix
+    ./modules/home/vscode.nix
   ];
 }
