@@ -13,8 +13,7 @@
       ./modules/flatpak.nix
       ./modules/vscode.nix
       ./modules/gnome-keyring.nix
-      ./modules/dconf.nix
-      ./modules/file-explorer.nix
+      ./modules/file-explorers.nix
       ./modules/dms.nix
       ./modules/niri.nix
       ./modules/adguard-home.nix
@@ -78,10 +77,6 @@
   #  wget
     
   # ];
-
-  environment.sessionVariables = {
-    NIXOS_OZONE_WL = "1";  # Instructs Electron apps (like Discord) to use Wayland instead of X11
-  };
   
   # Installing other programs
   programs.firefox.enable = true;
