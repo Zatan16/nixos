@@ -8,7 +8,6 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      <home-manager/nixos>
 
       ./modules/flatpak.nix
       ./modules/vscode.nix
@@ -66,6 +65,7 @@
 
   # Run `nixos-rebuild switch` without sudo
   nix.settings.trusted-users = [ "root" "@wheel" ];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
