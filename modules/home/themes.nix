@@ -54,13 +54,13 @@
   '';
 
   # Set color scheme for KDE apps like Dolphin
-  xdg.configFile."kdeglobals".text = ''
-    [General]
-    ColorScheme=BreezeDark
+  # xdg.configFile."kdeglobals".text = ''
+  #   [General]
+  #   ColorScheme=BreezeDark
 
-    [KDE]
-    LookAndFeelPackage=org.kde.breezedark.desktop
-  '';
+  #   [KDE]
+  #   LookAndFeelPackage=org.kde.breezedark.desktop
+  # '';
 
   # Dark mode + icon/theme settings for GTK apps like Nemo
   dconf.settings = {

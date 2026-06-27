@@ -9,8 +9,6 @@
     GTK_THEME = "Numix";  # Forces theme for GTK apps that don't read dconf
   };
 
-  nixpkgs.config.allowUnfree = true;
-
   imports = [
     ./modules/home/games.nix
     ./modules/home/learn-hacking.nix
