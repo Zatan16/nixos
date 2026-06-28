@@ -1,6 +1,14 @@
-{ pkgs, ... }:
+{ pkgs, niri, ... }:
 
 {
+  imports = [
+    ./dms.nix
+  ];
+
+  nixpkgs.overlays = [
+    niri.overlays.niri-nix
+  ];
+
   # Enable niri
   programs.niri = {
     enable = true;

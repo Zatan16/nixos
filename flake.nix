@@ -11,7 +11,7 @@
 
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.7.0";
 
-    niri.url = "github:sodiboo/niri-flake";
+    niri.url = "git+https://codeberg.org/BANanaD3V/niri-nix";
 
     dms.url = "github:AvengeMedia/DankMaterialShell";
   };
@@ -19,6 +19,7 @@
   outputs = { nixpkgs, home-manager, nix-flatpak, niri, dms, ... }: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
+      specialArgs = { inherit niri; };
       modules = [
         ./configuration.nix
 
@@ -34,10 +35,10 @@
 
         nix-flatpak.nixosModules.nix-flatpak
 
-        niri.nixosModules.niri
+        niri.nixosModules.default
         
         dms.nixosModules.dank-material-shell
-        dms.nixosModules.greeter   
+        dms.nixosModules.greeter
       ];
     };
   };

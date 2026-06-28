@@ -13,7 +13,6 @@
       ./modules/vscode.nix
       ./modules/gnome-keyring.nix
       ./modules/file-explorers.nix
-      ./modules/dms.nix
       ./modules/niri.nix
       ./modules/adguard-home.nix
       ./modules/utilities.nix
