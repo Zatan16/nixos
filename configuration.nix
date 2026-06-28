@@ -94,12 +94,6 @@
   };
   # security.rtkit.enable = true;
   programs.xwayland.enable =  true;
-  
-  # DMS greeter
-  services.displayManager.dms-greeter = {
-    enable = true;
-    compositor.name = "niri";
-  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
