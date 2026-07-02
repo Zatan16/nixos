@@ -14,9 +14,14 @@
     niri.url = "git+https://codeberg.org/BANanaD3V/niri-nix";
 
     dms.url = "github:AvengeMedia/DankMaterialShell";
+
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, nix-flatpak, niri, dms, ... }: {
+  outputs = { nixpkgs, home-manager, nix-flatpak, niri, dms, stylix, ... }: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = { inherit niri; };
@@ -39,6 +44,8 @@
         
         dms.nixosModules.dank-material-shell
         dms.nixosModules.greeter
+
+        stylix.nixosModules.stylix
       ];
     };
   };
