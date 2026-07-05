@@ -5,11 +5,12 @@
 { ... }:
 
 {
+  services.flatpak.enable = true;
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
 
-      ./modules/flatpak.nix
+      ./modules/anti-flatpak.nix
       ./modules/vscode.nix
       ./modules/gnome-keyring.nix
       ./modules/file-explorers.nix

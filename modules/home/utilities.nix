@@ -14,5 +14,8 @@
     evince   # GNOME PDF Viewer
 
     kdePackages.kdeconnect-kde
+
+    nvtopPackages.intel  # gpu details viewer
+    htop  # system processes viewer
   ];
 }
