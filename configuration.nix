@@ -5,7 +5,6 @@
 { ... }:
 
 {
-  services.flatpak.enable = true;
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
@@ -18,6 +17,7 @@
       ./modules/adguard-home.nix
       ./modules/utilities.nix
       ./modules/android-development.nix
+      ./modules/ollama.nix
     ];
 
   # Bootloader.
