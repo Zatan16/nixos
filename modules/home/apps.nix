@@ -26,6 +26,7 @@
 
     # Dev Tools
     git
+    git-lfs  # git for latge files
     busybox  # provides lsusb and other unix utilities
   ];
 }
