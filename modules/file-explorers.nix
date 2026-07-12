@@ -8,9 +8,8 @@
       xdg-desktop-portal-gnome
     ];
     config = {
-      niri = {
-        default = lib.mkDefault [ "kde" ];
-      };
+      niri.default = lib.mkDefault [ "gtk" ];
+      common.default = lib.mkDefault [ "gtk" ];
     };
   };
 

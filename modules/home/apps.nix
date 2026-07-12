@@ -12,6 +12,7 @@
 
     # Communication
     vesktop  # discord client with wayland support
+    zoom-us
 
     # Music
     spotify
