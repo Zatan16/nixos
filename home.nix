@@ -7,8 +7,6 @@
     NIXOS_OZONE_WL = "1";  # Instructs Electron apps (like Discord) to use Wayland instead of X11
     XDG_DATA_DIRS = "$HOME/.nix-profile/share:/run/current-system/sw/share:$XDG_DATA_DIRS";  # Ensures Dolphin and other apps can find .desktop files at runtime
     GTK_THEME = "Numix";  # Forces theme for GTK apps that don't read dconf
-
-    # niri.homeMoules.niri-nix;
   };
 
   imports = [
@@ -19,6 +17,7 @@
     ./modules/home/apps.nix
     ./modules/home/file-explorers.nix
     ./modules/home/themes.nix
+    ./modules/home/opencode.nix
   ];
 
   # Rebuilds KDE's sycoca database so Dolphin can find apps

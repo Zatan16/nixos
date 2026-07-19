@@ -18,5 +18,8 @@
     nvtopPackages.intel  # gpu details viewer
     htop  # system processes viewer
     pciutils  # inspecting & managing PCI devices: installs lspci, pcilmr, setpci
+    gparted-full
+
+    direnv  # auto-run commands on entering directory
   ];
 }

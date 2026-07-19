@@ -21,10 +21,10 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, nix-flatpak, niri, dms, stylix, ... }: {
+  outputs = { nixpkgs, home-manager, nix-flatpak, niri, dms, stylix, ... } @ inputs: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      specialArgs = { inherit niri; };
+      specialArgs = { inherit niri; inherit inputs; };
       modules = [
         ./configuration.nix
 
