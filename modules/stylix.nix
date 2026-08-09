@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
   stylix = {
@@ -10,7 +10,20 @@
     # Or set an explicit base16 color scheme instead of image auto-generation:
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
 
-    polarity = "dark"; # "dark" or "light"
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+    image = config.lib.stylix.pixel "base00";
+
+    # targets = {
+    #   swaybg.enable = false;
+    #   hyprpaper.enable = false;
+    # };
+
+    icons = {
+      enable = true;
+      package = pkgs.papirus-icon-theme;
+      dark = "Papirus-Dark";
+      light = "Papirus-Dark";
+    };
 
     # Optional: Customize default fonts across GTK, Qt, terminal, etc.
     # fonts = {
