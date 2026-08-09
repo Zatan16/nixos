@@ -15,6 +15,7 @@
       ./modules/gnome-keyring.nix
       ./modules/applications.nix
       ./modules/file-manager.nix
+      ./modules/essentials.nix
     ];
 
   # Bootloader.
@@ -30,9 +31,6 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-  hardware.bluetooth.enable = true;
-  services.power-profiles-daemon.enable = true;
-  services.upower.enable = true;
 
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";
