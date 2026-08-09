@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  # 1. Enable Thunar + Plugins
+  # Enable Thunar + Plugins
   programs.thunar = {
     enable = true;
     plugins = with pkgs; [
@@ -10,16 +10,16 @@
     ];
   };
 
-  # 2. Enable Yazi
+  # Enable Yazi
   programs.yazi = {
     enable = true;
   };
 
-  # 3. System Services (Thumbnails, USB Auto-mount, Trash)
+  # System Services (Thumbnails, USB Auto-mount, Trash)
   services.gvfs.enable = true;    # Mount USB drives, trash, network shares
   services.tumbler.enable = true; # Image/video thumbnails for Thunar
 
-  # 4. Install Helper Packages Globally
+  # Install Helper Packages Globally
   environment.systemPackages = with pkgs; [
     # Yazi Preview & Search Helpers
     ffmpegthumbnailer # Video previews
@@ -34,5 +34,44 @@
 
     # Thunar Archive GUI
     file-roller
+
+    papirus-icon-theme   # Provides Papirus-Dark
+    adwaita-icon-theme   # Fallback icons
+    hicolor-icon-theme   # Base XDG icon theme specification
+    glib  # provides gsettings
   ];
+
+  environment.pathsToLink = [ "/share/icons" ];
+
+  # EXPOSE ICON PATHS TO GTK IN THE SESSION ENVIRONMENT
+  environment.sessionVariables = {
+    XDG_DATA_DIRS = [
+      "/run/current-system/sw/share"
+      "${pkgs.papirus-icon-theme}/share"
+    ];
+    GTK_THEME = "Adwaita:dark";
+  };
+
+  # GTK3 CONFIGURATION
+  environment.etc = {
+    "xdg/gtk-3.0/settings.ini".text = ''
+      [Settings]
+      gtk-theme-name=Adwaita-dark
+      gtk-icon-theme-name=Papirus-Dark
+      gtk-cursor-theme-name=Adwaita
+      gtk-application-prefer-dark-theme=1
+    '';
+  };
+
+  # DCONF DATABASE OVERRIDE FOR WAYLAND
+  programs.dconf.enable = true;
+  programs.dconf.profiles.user.databases = [{
+    settings = {
+      "org/gnome/desktop/interface" = {
+        icon-theme = "Papirus-Dark";
+        gtk-theme = "Adwaita-dark";
+        color-scheme = "prefer-dark";
+      };
+    };
+  }];
 }

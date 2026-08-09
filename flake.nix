@@ -11,11 +11,10 @@
       url = "github:noctalia-dev/noctalia/legacy-v4";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # sddm-noctalia-theme = {
-    #   url = "github:mda-dev/noctalia-sddm-theme";
-    #   flake = false;
-    # };
-    noctalia-greeter.url = "github:noctalia-dev/noctalia-greeter";
+    noctalia-greeter = {
+      url = "github:noctalia-dev/noctalia-greeter";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     stylix = {
       url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
