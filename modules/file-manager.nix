@@ -41,18 +41,15 @@
     glib  # provides gsettings
   ];
 
-  environment.pathsToLink = [ "/share/icons" ];
-
-  # EXPOSE ICON PATHS TO GTK IN THE SESSION ENVIRONMENT
+  # 2. Force Environment Variables for GTK3 / Wayland
   environment.sessionVariables = {
+    GTK_THEME = "Adwaita:dark";
     XDG_DATA_DIRS = [
       "/run/current-system/sw/share"
-      "${pkgs.papirus-icon-theme}/share"
     ];
-    GTK_THEME = "Adwaita:dark";
   };
 
-  # GTK3 CONFIGURATION
+  # 3. Create global GTK configuration files
   environment.etc = {
     "xdg/gtk-3.0/settings.ini".text = ''
       [Settings]
@@ -63,15 +60,10 @@
     '';
   };
 
-  # DCONF DATABASE OVERRIDE FOR WAYLAND
+  # 4. Link icon share directories system-wide
+  environment.pathsToLink = [ "/share/icons" ];
+
+  # 5. DBus & Portal support
+  services.dbus.packages = [ pkgs.gsettings-desktop-schemas ];
   programs.dconf.enable = true;
-  programs.dconf.profiles.user.databases = [{
-    settings = {
-      "org/gnome/desktop/interface" = {
-        icon-theme = "Papirus-Dark";
-        gtk-theme = "Adwaita-dark";
-        color-scheme = "prefer-dark";
-      };
-    };
-  }];
 }
