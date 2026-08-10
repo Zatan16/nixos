@@ -16,6 +16,7 @@
       ./modules/applications.nix
       ./modules/file-manager.nix
       ./modules/essentials.nix
+      ./modules/nvidia.nix
     ];
 
   # Bootloader.
