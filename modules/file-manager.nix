@@ -35,6 +35,14 @@
     # Thunar Archive GUI
     file-roller
 
+    # For file thumbnails
+    tumbler
+
+    # Create User Folders like Documents, Downloads, etc.
+    # NOTE: Run `xdg-user-dirs-update --force` later
+    xdg-user-dirs
+    xdg-user-dirs-gtk
+
     papirus-icon-theme   # Provides Papirus-Dark
     adwaita-icon-theme   # Fallback icons
     hicolor-icon-theme   # Base XDG icon theme specification
@@ -44,9 +52,9 @@
   # 2. Force Environment Variables for GTK3 / Wayland
   environment.sessionVariables = {
     GTK_THEME = "Adwaita:dark";
-    XDG_DATA_DIRS = [
-      "/run/current-system/sw/share"
-    ];
+    # XDG_DATA_DIRS = [
+    #   "/run/current-system/sw/share"
+    # ];
   };
 
   # 3. Create global GTK configuration files
@@ -66,4 +74,19 @@
   # 5. DBus & Portal support
   services.dbus.packages = [ pkgs.gsettings-desktop-schemas ];
   programs.dconf.enable = true;
+
+  system.userActivationScripts.gtkBookmarks = {
+  text = ''
+    BOOKMARKS_FILE="$HOME/.config/gtk-3.0/bookmarks"
+    mkdir -p "$HOME/.config/gtk-3.0"
+    touch "$BOOKMARKS_FILE"
+
+    for folder in Documents Downloads Music Pictures Videos; do
+      LINE="file://$HOME/$folder"
+      if ! grep -qF "$LINE" "$BOOKMARKS_FILE"; then
+        echo "$LINE" >> "$BOOKMARKS_FILE"
+      fi
+    done
+    '';
+  };
 }
