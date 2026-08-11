@@ -24,5 +24,8 @@
 
     # Clipboard
     wl-clipboard
+
+    # Python
+    python3
   ];
 }
