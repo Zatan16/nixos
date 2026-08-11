@@ -17,6 +17,7 @@
       ./modules/file-manager.nix
       ./modules/essentials.nix
       ./modules/nvidia.nix
+      ./modules/ollama.nix
     ];
 
   # Bootloader.
