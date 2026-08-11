@@ -9,15 +9,14 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
 
+      ./modules/nix-cleanup.nix
       ./modules/niri.nix
-      ./modules/noctalia-greeter.nix
       ./modules/stylix.nix
-      ./modules/gnome-keyring.nix
       ./modules/applications.nix
-      ./modules/file-manager.nix
       ./modules/essentials.nix
       ./modules/nvidia.nix
       ./modules/ollama.nix
+      ./modules/opencode.nix
     ];
 
   # Bootloader.
