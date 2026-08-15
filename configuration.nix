@@ -70,6 +70,11 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  environment.sessionVariables = {
+    DISPLAY = ":0";
+    WAYLAND_DISPLAY = "wayland-0";
+  };
+
 #  services.greetd = {
 #    enable = true;
 #    settings.default_session = {

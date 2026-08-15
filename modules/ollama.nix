@@ -6,6 +6,10 @@
     # loadModels = [ "nemotron-3-nano:4b" "gemma4:e2b" ];
     # syncModels = true;
     host = "0.0.0.0";
+    environmentVariables = {
+      OLLAMA_CONTEXT_LENGTH = "65536";
+      OLLAMA_FLASH_ATTENTION = "1";
+    };
 
     package = pkgs.ollama-cuda;
 
