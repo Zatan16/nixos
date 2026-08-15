@@ -11,5 +11,6 @@
     vivaldi-ffmpeg-codecs
     gedit
     git
+    vesktop
   ];
 }
