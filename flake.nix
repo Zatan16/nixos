@@ -11,24 +11,24 @@
       url = "github:noctalia-dev/noctalia/legacy-v4";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    noctalia-greeter = {
-      url = "github:noctalia-dev/noctalia-greeter";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # noctalia-greeter = {
+    #   url = "github:noctalia-dev/noctalia-greeter";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
     stylix = {
       url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, niri-nix, stylix, noctalia-greeter, ...}@inputs: {
+  outputs = { self, nixpkgs, niri-nix, stylix, ...}@inputs: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
       modules = [
         ./configuration.nix
         niri-nix.nixosModules.default
-        noctalia-greeter.nixosModules.default
+        # noctalia-greeter.nixosModules.default
         stylix.nixosModules.stylix
       ];
     };

@@ -1,19 +1,37 @@
 { ...}:
 
 {
-  programs.noctalia-greeter = {
-    enable = false;
+  # programs.noctalia-greeter = {
+  #   enable = false;
 
-    settings = {
-      session = {
-        default = "niri-session";
-      };
+  #   settings = {
+  #     session = {
+  #       default = "niri-session";
+  #     };
 
-      user = {
-        default = "zayaan";
-      };
-    };
-  };
+  #     user = {
+  #       default = "zayaan";
+  #     };
+  #   };
+  # };
+
+  # systemd.services.greetd = {
+  #   after = [
+  #     "systemd-user-sessions.service"
+  #     "plymouth-quit-wait.service"
+  #     "getty@tty1.service"
+  #   ];
+  #   serviceConfig = {
+  #     Type = "idle";
+  #     StandardInput = "tty";
+  #     StandardOutput = "tty";
+  #     TTYPath = "/dev/tty1";
+  #     TTYReset = true;
+  #     TTYHangup = true;
+  #   };
+  # };
+
+  # services.displayManager.noctalia-greeter.enable = true;
 
   services.greetd = {
     enable = true;
@@ -22,22 +40,6 @@
         command = "niri-session";
         user = "zayaan";
       };
-    };
-  };
-
-  systemd.services.greetd = {
-    after = [
-      "systemd-user-sessions.service"
-      "plymouth-quit-wait.service"
-      "getty@tty1.service"
-    ];
-    serviceConfig = {
-      Type = "idle";
-      StandardInput = "tty";
-      StandardOutput = "tty";
-      TTYPath = "/dev/tty1";
-      TTYReset = true;
-      TTYHangup = true;
     };
   };
 }
