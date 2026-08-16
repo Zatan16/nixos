@@ -31,15 +31,21 @@
   #   };
   # };
 
-  # services.displayManager.noctalia-greeter.enable = true;
-
-  services.greetd = {
+  services.displayManager.noctalia-greeter = {
     enable = true;
     settings = {
-      default_session = {
-        command = "niri-session";
-        user = "zayaan";
-      };
+      session.default = "niri";
+      user.default = "zayaan";
     };
   };
+
+  # services.greetd = {
+  #   enable = true;
+  #   settings = {
+  #     default_session = {
+  #       command = "niri-session";
+  #       user = "zayaan";
+  #     };
+  #   };
+  # };
 }
