@@ -12,5 +12,7 @@
     gedit
     git
     vesktop
+    gpu-screen-recorder
+    gnome-system-monitor
   ];
 }
