@@ -17,6 +17,7 @@
       ./modules/nvidia.nix
       ./modules/ollama.nix
       ./modules/opencode.nix
+      ./modules/mime.nix
     ];
 
   # Bootloader.
@@ -70,10 +71,10 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  environment.sessionVariables = {
-    DISPLAY = ":0";
-    WAYLAND_DISPLAY = "wayland-0";
-  };
+  # environment.sessionVariables = {
+  #   DISPLAY = ":0";
+  #   WAYLAND_DISPLAY = "wayland-0";
+  # };
 
 #  services.greetd = {
 #    enable = true;
