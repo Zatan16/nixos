@@ -27,5 +27,8 @@
 
     # Clipboard
     wl-clipboard
+
+    # Xorg in Wayland
+    xwayland-satellite
   ];
 }
