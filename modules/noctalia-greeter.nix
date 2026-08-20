@@ -1,4 +1,4 @@
-{ ...}:
+{ ... }:
 
 {
   # programs.noctalia-greeter = {
@@ -34,7 +34,7 @@
   services.displayManager.noctalia-greeter = {
     enable = true;
     settings = {
-      session.default = "niri";
+      session.default = "niri-session";
       user.default = "zayaan";
     };
   };
@@ -43,8 +43,7 @@
   #   enable = true;
   #   settings = {
   #     default_session = {
-  #       command = "niri-session";
-  #       user = "zayaan";
+  #       command = lib.mkForce "env NOCTALIA_GREETER_LOG=/var/lib/noctalia-greeter/greeter.log WLR_LOG=info ${lib.getExe' pkgs.noctalia-greeter "noctalia-greeter-session"}";
   #     };
   #   };
   # };

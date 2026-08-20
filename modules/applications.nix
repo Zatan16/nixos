@@ -11,8 +11,9 @@
     vivaldi-ffmpeg-codecs
     gedit
     git
-    vesktop
+    vesktop # Discord
     gpu-screen-recorder
-    gnome-system-monitor
+    gnome-system-monitor # Process Monitor
+    evince # PDF Viewer
   ];
 }
