@@ -14,6 +14,7 @@
     vesktop # Discord
     gpu-screen-recorder
     gnome-system-monitor # Process Monitor
+    kdePackages.plasma-systemmonitor
     evince # PDF Viewer
   ];
 }
