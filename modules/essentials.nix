@@ -30,5 +30,8 @@
 
     # Xorg in Wayland
     xwayland-satellite
+
+    # Intel Driver for VAAPI
+    intel-media-driver
   ];
 }
