@@ -16,9 +16,12 @@
       url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    home-manager = {
+      url = "github:nix-community/home-manager/release-26.05";
+    };
   };
 
-  outputs = { self, nixpkgs, niri-nix, stylix, nix-flatpak, ...}@inputs: {
+  outputs = { self, nixpkgs, niri-nix, stylix, nix-flatpak, home-manager, ...}@inputs: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
