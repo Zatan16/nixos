@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ ... }:
+{ pkgs, ... }:
 
 {
   imports =
@@ -52,6 +52,14 @@
     LC_TIME = "en_IN";
   };
 
+  i18n.inputMethod = {
+    enable = true;
+    type = "fcitx5";
+    fcitx5.addons = with pkgs; [
+      fcitx5-gtk
+    ];
+  };
+
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
@@ -62,7 +70,7 @@
   users.users."zayaan" = {
     isNormalUser = true;
     description = "Zayaan";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "input" "uinput" ];
     # packages = with pkgs; [];
   };
 
