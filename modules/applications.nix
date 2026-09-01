@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   imports = [ ./vscode.nix ./gnome-keyring.nix ./file-manager.nix ./flatpak.nix ];
@@ -17,5 +17,7 @@
     kdePackages.plasma-systemmonitor
     evince # PDF Viewer
     kitty
+
+    inputs.torlink.packages.${system}.default
   ];
 }

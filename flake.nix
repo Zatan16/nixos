@@ -19,9 +19,13 @@
     home-manager = {
       url = "github:nix-community/home-manager/release-26.05";
     };
+    torlink = {
+      url = "github:baairon/torlink";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, niri-nix, stylix, nix-flatpak, home-manager, ...}@inputs: {
+  outputs = { self, nixpkgs, niri-nix, stylix, nix-flatpak, home-manager, torlink, ...}@inputs: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
