@@ -74,6 +74,8 @@
     # packages = with pkgs; [];
   };
 
+  home-manager.users.zayaan = import ./home.nix;
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 

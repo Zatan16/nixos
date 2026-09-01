@@ -6,7 +6,11 @@
   # Ensure background hardware services are enabled
   services.upower.enable = true;     # Enables battery & power tracking for status bars
   hardware.bluetooth.enable = true;  # Enables bluetooth
-  services.power-profiles-daemon.enable = true;   # Enable power profiles daemon
+  # services.power-profiles-daemon.enable = true;   # Enable power profiles daemon
+  services.tlp = {                   # Power Management Daemon
+    enable = true;
+    pd.enable = true;
+  };
   programs.xwayland.enable = true;   # Enables X11 support on Walyand
   hardware.uinput.enable = true;     # Enables applications to create virtual input devices
 
@@ -40,5 +44,8 @@
 
     # Intel Driver for VAAPI
     intel-media-driver
+
+    # NodeJS
+    nodejs_22
   ];
 }

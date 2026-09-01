@@ -322,7 +322,8 @@
         "nix-flatpak": "nix-flatpak",
         "nixpkgs": "nixpkgs_2",
         "noctalia": "noctalia",
-        "stylix": "stylix"
+        "stylix": "stylix",
+        "torlink": "torlink"
       }
     },
     "stylix": {
@@ -450,6 +451,26 @@
       "original": {
         "owner": "tinted-theming",
         "repo": "base16-zed",
+        "type": "github"
+      }
+    },
+    "torlink": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1788026510,
+        "narHash": "sha256-LrKSDfSssZ67+O8iGxdCM78Yxsj/OSsEm/+WUkeUW8g=",
+        "owner": "baairon",
+        "repo": "torlink",
+        "rev": "918d3f6c9659d6595348a872f1c83acfbe3214c9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "baairon",
+        "repo": "torlink",
         "type": "github"
       }
     },
