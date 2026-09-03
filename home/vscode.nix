@@ -1,7 +1,7 @@
 { pkgs, inputs, ...}:
 
 {
-  environment.systemPackages = with pkgs; [
+  home.packages = with pkgs; [
     (vscode.override {
         commandLineArgs = "--password-store=gnome-libsecret";
     })

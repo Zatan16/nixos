@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   imports =
@@ -17,7 +17,7 @@
       ./modules/nvidia.nix
       ./modules/ollama.nix
       ./modules/opencode.nix
-      ./modules/mime.nix
+      # ./modules/mime.nix
     ];
 
   # Bootloader.
@@ -75,6 +75,7 @@
   };
 
   home-manager.users.zayaan = import ./home.nix;
+  home-manager.extraSpecialArgs = { inherit inputs; };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;

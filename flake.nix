@@ -17,7 +17,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
-      url = "github:nix-community/home-manager/release-26.05";
+      url = "github:nix-community/home-manager/master";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     torlink = {
       url = "github:baairon/torlink";
@@ -35,6 +36,7 @@
         # noctalia-greeter.nixosModules.default
         stylix.nixosModules.stylix
         nix-flatpak.nixosModules.nix-flatpak
+        home-manager.nixosModules.home-manager
       ];
     };
   };
