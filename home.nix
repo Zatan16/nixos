@@ -4,6 +4,7 @@
   imports = [
     ./home/applications.nix
     ./home/mime.nix
+    ./home/kitty.nix
   ];
 
   home.username = "zayaan";

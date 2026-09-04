@@ -18,6 +18,8 @@
     #   hyprpaper.enable = false;
     # };
 
+    polarity = "dark";
+
     icons = {
       enable = true;
       package = pkgs.papirus-icon-theme;

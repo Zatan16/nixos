@@ -13,7 +13,6 @@
     gnome-system-monitor # Process Monitor
     kdePackages.plasma-systemmonitor
     evince # PDF Viewer
-    kitty
 
     inputs.torlink.packages.${system}.default
   ];
