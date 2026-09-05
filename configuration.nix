@@ -82,27 +82,7 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  # environment.sessionVariables = {
-  #   DISPLAY = ":0";
-  #   WAYLAND_DISPLAY = "wayland-0";
-  # };
-
-#  services.greetd = {
-#    enable = true;
-#    settings.default_session = {
-#      command = "niri-session";
-#      user = "zayaan";
-#    };
-#  };
-
-#  services.displayManager.autoLogin.enable = false;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  # environment.systemPackages = with pkgs; [
-    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    #  wget
-  # ];
+  environment.pathsToLink = [ "/share/bash-completion" ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
