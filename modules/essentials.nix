@@ -63,5 +63,8 @@
 
     # NodeJS
     nodejs_22
+
+    # SSD Health
+    smartmontools
   ];
 }

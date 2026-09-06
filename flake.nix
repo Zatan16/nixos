@@ -24,9 +24,13 @@
       url = "github:baairon/torlink";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    openclaw = {
+      url = "github:Scout-DJ/openclaw-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, niri-nix, stylix, nix-flatpak, home-manager, torlink, ...}@inputs: {
+  outputs = { self, nixpkgs, niri-nix, stylix, nix-flatpak, home-manager, torlink, openclaw, ...}@inputs: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };

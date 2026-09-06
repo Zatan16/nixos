@@ -16,7 +16,8 @@
       ./modules/essentials.nix
       ./modules/nvidia.nix
       ./modules/ollama.nix
-      ./modules/opencode.nix
+      # ./modules/openclaw.nix
+      # ./modules/opencode.nix
       # ./modules/mime.nix
     ];
 
