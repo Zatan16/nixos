@@ -43,50 +43,50 @@
     xdg-user-dirs
     xdg-user-dirs-gtk
 
-    papirus-icon-theme   # Provides Papirus-Dark
-    adwaita-icon-theme   # Fallback icons
-    hicolor-icon-theme   # Base XDG icon theme specification
-    glib  # provides gsettings
+    # papirus-icon-theme   # Provides Papirus-Dark
+    # adwaita-icon-theme   # Fallback icons
+    # hicolor-icon-theme   # Base XDG icon theme specification
+    # glib  # provides gsettings
   ];
 
   # 2. Force Environment Variables for GTK3 / Wayland
-  environment.sessionVariables = {
-    GTK_THEME = "Adwaita:dark";
-    # XDG_DATA_DIRS = [
-    #   "/run/current-system/sw/share"
-    # ];
-  };
+  # environment.sessionVariables = {
+  #   GTK_THEME = "Adwaita:dark";
+  #   # XDG_DATA_DIRS = [
+  #   #   "/run/current-system/sw/share"
+  #   # ];
+  # };
 
-  # 3. Create global GTK configuration files
-  environment.etc = {
-    "xdg/gtk-3.0/settings.ini".text = ''
-      [Settings]
-      gtk-theme-name=Adwaita-dark
-      gtk-icon-theme-name=Papirus-Dark
-      gtk-cursor-theme-name=Adwaita
-      gtk-application-prefer-dark-theme=1
-    '';
-  };
+  # # 3. Create global GTK configuration files
+  # environment.etc = {
+  #   "xdg/gtk-3.0/settings.ini".text = ''
+  #     [Settings]
+  #     gtk-theme-name=Adwaita-dark
+  #     gtk-icon-theme-name=Papirus-Dark
+  #     gtk-cursor-theme-name=Adwaita
+  #     gtk-application-prefer-dark-theme=1
+  #   '';
+  # };
 
   # 4. Link icon share directories system-wide
-  environment.pathsToLink = [ "/share/icons" ];
+  # environment.pathsToLink = [ "/share/icons" ];
 
-  # 5. DBus & Portal support
-  services.dbus.packages = [ pkgs.gsettings-desktop-schemas ];
-  programs.dconf.enable = true;
+  # # 5. DBus & Portal support
+  # services.dbus.packages = [ pkgs.gsettings-desktop-schemas ];
+  # programs.dconf.enable = true;
 
-  system.userActivationScripts.gtkBookmarks = {
-  text = ''
-    BOOKMARKS_FILE="$HOME/.config/gtk-3.0/bookmarks"
-    mkdir -p "$HOME/.config/gtk-3.0"
-    touch "$BOOKMARKS_FILE"
+  # system.userActivationScripts.gtkBookmarks = {
+  # text = ''
+  #   BOOKMARKS_FILE="$HOME/.config/gtk-3.0/bookmarks"
+  #   mkdir -p "$HOME/.config/gtk-3.0"
+  #   touch "$BOOKMARKS_FILE"
 
-    for folder in Documents Downloads Music Pictures Videos; do
-      LINE="file://$HOME/$folder"
-      if ! grep -qF "$LINE" "$BOOKMARKS_FILE"; then
-        echo "$LINE" >> "$BOOKMARKS_FILE"
-      fi
-    done
-    '';
-  };
+  #   for folder in Documents Downloads Music Pictures Videos; do
+  #     LINE="file://$HOME/$folder"
+  #     if ! grep -qF "$LINE" "$BOOKMARKS_FILE"; then
+  #       echo "$LINE" >> "$BOOKMARKS_FILE"
+  #     fi
+  #   done
+  #   '';
+  # };
 }

@@ -13,11 +13,6 @@
     base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
     image = config.lib.stylix.pixel "base00";
 
-    # targets = {
-    #   swaybg.enable = false;
-    #   hyprpaper.enable = false;
-    # };
-
     polarity = "dark";
 
     icons = {
@@ -27,16 +22,10 @@
       light = "Papirus-Dark";
     };
 
-    # Optional: Customize default fonts across GTK, Qt, terminal, etc.
-    # fonts = {
-    #   monospace = {
-    #     package = pkgs.nerd-fonts.jetbrains-mono;
-    #     name = "JetBrainsMono Nerd Font";
-    #   };
-    #   sansSerif = {
-    #     package = pkgs.dejavu_fonts;
-    #     name = "DejaVu Sans";
-    #   };
-    # };
+    fonts.sizes = {
+      popups = 10;
+      applications = 12;
+      desktop = 10;
+    };
   };
 }

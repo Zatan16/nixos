@@ -1,7 +1,7 @@
 { pkgs, inputs, ... }:
 
 {
-  imports = [ ./vscode.nix ];
+  imports = [ ./vscode.nix ./file-manager.nix ];
 
   home.packages = with pkgs; [
     # alacritty
