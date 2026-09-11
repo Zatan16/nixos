@@ -7,5 +7,7 @@
     "file:///${config.home.homeDirectory}/Music"
     "file:///${config.home.homeDirectory}/Pictures"
     "file:///${config.home.homeDirectory}/Videos"
+    "file:///etc/nixos/"
+    "file:///${config.home.homeDirectory}/.config/niri"
   ];
 }
