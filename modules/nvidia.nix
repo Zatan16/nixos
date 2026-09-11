@@ -11,13 +11,12 @@
   hardware.nvidia = {
     modesetting.enable = true;
 
-    powerManagement.enable = false;
-    powerManagement.finegrained = false;
+    # Enable power management to let the GPUs sleep
+    powerManagement.enable = true;
+    powerManagement.finegrained = true;
 
     open = true;
-
     nvidiaSettings = true;
-
     package = config.boot.kernelPackages.nvidiaPackages.stable;
 
     prime = {

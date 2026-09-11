@@ -5,6 +5,7 @@
     ./home/applications.nix
     ./home/mime.nix
     ./home/kitty.nix
+    ./home/desktop-entries.nix
   ];
 
   home.username = "zayaan";

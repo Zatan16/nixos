@@ -14,6 +14,6 @@
     kdePackages.plasma-systemmonitor
     evince # PDF Viewer
 
-    inputs.torlink.packages.${system}.default
+    # torlink
   ];
 }

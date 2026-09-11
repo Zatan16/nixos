@@ -85,6 +85,11 @@
 
   environment.pathsToLink = [ "/share/bash-completion" ];
 
+  # environment.variables = {
+  #   GLX_VENDOR_LIBRARY_NAME = "mesa";
+  #   EGL_VENDOR_LIBRARY_FILENAMES = "/run/opengl-driver/share/glvnd/egl_vendor.d/50_mesa.json";
+  # };
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
