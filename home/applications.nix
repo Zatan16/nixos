@@ -3,6 +3,8 @@
 {
   imports = [ ./vscode.nix ./file-manager.nix ];
 
+  programs.zoxide.enable = true;
+
   home.packages = with pkgs; [
     # alacritty
     vivaldi
