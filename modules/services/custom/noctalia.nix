@@ -35,10 +35,14 @@ in {
         enable = true;
         settings = {
           default_session = {
-            command = "${inputs.noctalia-greeter.packages.${pkgs.stdenv.hostPlatform.system}.default}/bin/noctalia-greeter";
+            command = "${pkgs.cage}/bin/cage -s -- ${inputs.noctalia-greeter.packages.${pkgs.stdenv.hostPlatform.system}.default}/bin/noctalia-greeter";
             user = "greeter";
           };
         };
+      };
+
+      users.extraUsers.greeter = {
+        extraGroups = [ "video" "render" ];
       };
 
       home-manager.users.zayaan = {
