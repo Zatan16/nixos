@@ -9,12 +9,9 @@
   };
 
   programs.zsh = {
-    # enable = true;
+    enable = true;
     autosuggestion.enable = true;
     enableCompletion = true;
-    # initContent = ''
-    #   eval "$(starship init zsh)"
-    # '';
   };
 
   programs.bash.enable = true;

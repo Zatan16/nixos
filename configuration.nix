@@ -78,9 +78,8 @@
   home-manager.users.zayaan = import ./home.nix;
   home-manager.extraSpecialArgs = { inherit inputs; };
 
-  programs.bash.enable = true;
-  # programs.zsh.enable = true;
-  # users.defaultUserShell = pkgs.bash;
+  programs.zsh.enable = true;
+  users.defaultUserShell = pkgs.zsh;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
