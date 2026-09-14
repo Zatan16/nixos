@@ -6,6 +6,7 @@
       "text/html" = "gedit.desktop";
       "application/pdf" = "evince.desktop";
       "text/*" = "gedit.desktop";
+      "image/*" = "viewnior.desktop";
     };
   };
 }

@@ -6,6 +6,7 @@
     ./home/mime.nix
     ./home/kitty.nix
     ./home/desktop-entries.nix
+    # ./home/noctalia-v5.nix
   ];
 
   home.username = "zayaan";

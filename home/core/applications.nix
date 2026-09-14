@@ -1,7 +1,7 @@
 { pkgs, inputs, ... }:
 
 {
-  imports = [ ./vscode.nix ./file-manager.nix ];
+  # imports = [ ./vscode.nix ./file-manager.nix ];
 
   programs.zoxide.enable = true;
 
@@ -15,7 +15,6 @@
     gnome-system-monitor # Process Monitor
     kdePackages.plasma-systemmonitor
     evince # PDF Viewer
-
-    # torlink
+    viewnior  # Image Viewer
   ];
 }

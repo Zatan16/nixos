@@ -5,7 +5,7 @@
     enable = true;
     enableBashIntegration = true;
     enableZshIntegration = true;
-    settings = fromTOML (builtins.readFile ../assets/starship/pastel-powerline.toml) // {};
+    settings = fromTOML (builtins.readFile ../../assets/starship/pastel-powerline.toml) // {};
   };
 
   programs.zsh = {

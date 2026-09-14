@@ -9,16 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
 
-      ./modules/nix-cleanup.nix
-      ./modules/niri.nix
-      ./modules/stylix.nix
-      ./modules/applications.nix
-      ./modules/essentials.nix
-      ./modules/nvidia.nix
-      ./modules/ollama.nix
-      # ./modules/openclaw.nix
-      # ./modules/opencode.nix
-      # ./modules/mime.nix
+      ../../modules
     ];
 
   # Bootloader.
@@ -75,7 +66,7 @@
     # packages = with pkgs; [];
   };
 
-  home-manager.users.zayaan = import ./home.nix;
+  home-manager.users.zayaan = import ../../home;
   home-manager.extraSpecialArgs = { inherit inputs; };
 
   programs.zsh.enable = true;

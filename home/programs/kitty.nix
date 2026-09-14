@@ -6,7 +6,7 @@
   programs.kitty = {
     enable = true;
     extraConfig = "
-    ${builtins.readFile ../assets/kitty/noctalia.conf}
+    ${builtins.readFile ../../assets/kitty/noctalia.conf}
       scrollback_lines 10000
     ";
 

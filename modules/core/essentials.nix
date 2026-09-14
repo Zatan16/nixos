@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  imports = [ ./python.nix ];
+  # imports = [ ./python.nix ];
 
   # Ensure background hardware services are enabled
   services.upower.enable = true;     # Enables battery & power tracking for status bars
@@ -37,6 +37,7 @@
     lshw
     lm_sensors
     libinput
+    brightnessctl
 
     # Power & Battery
     acpi

@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   # programs.noctalia-greeter = {
@@ -31,13 +31,25 @@
   #   };
   # };
 
-  services.displayManager.noctalia-greeter = {
+  services.greetd = {
     enable = true;
     settings = {
-      session.default = "niri-session";
-      user.default = "zayaan";
+      default_session = {
+        command = "${pkgs.noctalia-greeter}/bin/noctalia-greeter";
+        user = "greeter";
+      };
     };
   };
+
+  services.displayManager.enable = true;
+
+  # services.displayManager.noctalia-greeter = {
+  #   enable = true;
+  #   settings = {
+  #     session.default = "niri-session";
+  #     user.default = "zayaan";
+  #   };
+  # };
 
   # services.greetd = {
   #   enable = true;

@@ -1,7 +1,7 @@
 { pkgs, inputs, ...}:
 
 {
-  imports = [ ./noctalia.nix ];
+  # imports = [ ./noctalia-greeter.nix ];
 
   programs.niri = {
     enable = true;
@@ -11,4 +11,9 @@
   nixpkgs.overlays = [ inputs.niri-nix.overlays.niri-nix ];
 
   services.displayManager.defaultSession = "niri";
+
+  services.noctalia = {
+    enable = true;
+    version = 5;
+  };
 }

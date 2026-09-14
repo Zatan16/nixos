@@ -8,6 +8,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     noctalia = {
+      url = "github:noctalia-dev/noctalia";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    noctalia-v4 = {
       url = "github:noctalia-dev/noctalia/legacy-v4";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -28,10 +32,10 @@
       url = "github:Scout-DJ/openclaw-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # xwayland-satellite = {
-    #   url = "github:Supreeeme/xwayland-satellite/536bd32efc935bf876d6de385ec18a1b715c9358";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    noctalia-greeter = {
+      url = "github:noctalia-dev/noctalia-greeter";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, niri-nix, stylix, nix-flatpak, home-manager, torlink, openclaw, ...}@inputs: {
@@ -39,9 +43,8 @@
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
       modules = [
-        ./configuration.nix
+        ./hosts/nixos/configuration.nix
         niri-nix.nixosModules.default
-        # noctalia-greeter.nixosModules.default
         stylix.nixosModules.stylix
         nix-flatpak.nixosModules.nix-flatpak
         home-manager.nixosModules.home-manager
