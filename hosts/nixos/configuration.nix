@@ -47,13 +47,13 @@
     LC_TIME = "en_IN";
   };
 
-  i18n.inputMethod = {
-    enable = true;
-    type = "fcitx5";
-    fcitx5.addons = with pkgs; [
-      fcitx5-gtk
-    ];
-  };
+  # i18n.inputMethod = {
+  #   enable = true;
+  #   type = "fcitx5";
+  #   fcitx5.addons = with pkgs; [
+  #     fcitx5-gtk
+  #   ];
+  # };
 
   # Configure keymap in X11
   services.xserver.xkb = {
