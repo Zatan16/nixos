@@ -6,8 +6,6 @@
     ./core/desktop-entries.nix
     ./core/mime.nix
 
-    # ./desktop/noctalia-v5.nix
-
     ./programs/file-manager.nix
     ./programs/kitty.nix
     ./programs/starship.nix

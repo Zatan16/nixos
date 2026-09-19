@@ -8,6 +8,7 @@
     ./core/nix-cleanup.nix
 
     ./desktop/niri.nix
+    ./desktop/fonts.nix
 
     ./hardware/nvidia.nix
 
