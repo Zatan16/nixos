@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 
 {
   # imports = [ ./vscode.nix ./file-manager.nix ];

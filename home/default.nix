@@ -10,6 +10,7 @@
     ./programs/kitty.nix
     ./programs/starship.nix
     ./programs/vscode.nix
+    ./programs/godot.nix
   ];
 
   home.username = "zayaan";

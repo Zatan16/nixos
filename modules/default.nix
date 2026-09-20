@@ -6,6 +6,7 @@
     ./core/essentials.nix
     ./core/file-manager.nix
     ./core/nix-cleanup.nix
+    # ./core/android-sdk.nix
 
     ./desktop/niri.nix
     ./desktop/fonts.nix
