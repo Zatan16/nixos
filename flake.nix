@@ -8,7 +8,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     noctalia = {
-      url = "github:noctalia-dev/noctalia";
+      url = "github:noctalia-dev/noctalia/cachix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     noctalia-v4 = {
@@ -45,9 +45,15 @@
       modules = [
         ./hosts/nixos/configuration.nix
         niri-nix.nixosModules.default
-        stylix.nixosModules.stylix
         nix-flatpak.nixosModules.nix-flatpak
         home-manager.nixosModules.home-manager
+        stylix.nixosModules.stylix
+        {
+          home-manager.sharedModules = [
+            inputs.stylix.homeModules.stylix
+          ];
+        }
+        # stylix.homeModules.stylix
 
         ({ ... }: {
           nixpkgs.overlays = [
