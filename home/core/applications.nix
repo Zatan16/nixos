@@ -11,10 +11,10 @@
     vivaldi-ffmpeg-codecs
     gedit
     vesktop # Discord
-    gpu-screen-recorder
     gnome-system-monitor # Process Monitor
     kdePackages.plasma-systemmonitor
     evince # PDF Viewer
     viewnior  # Image Viewer
+    cheese # Camera
   ];
 }
