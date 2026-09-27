@@ -5,6 +5,7 @@
     ./core/applications.nix
     ./core/desktop-entries.nix
     ./core/mime.nix
+    ./core/stylix.nix
 
     ./programs/file-manager.nix
     ./programs/kitty.nix

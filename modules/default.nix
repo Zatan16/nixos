@@ -6,6 +6,7 @@
     ./core/essentials.nix
     ./core/file-manager.nix
     ./core/nix-cleanup.nix
+    ./core/virtualisation.nix
     # ./core/android-sdk.nix
 
     ./desktop/niri.nix
@@ -18,7 +19,6 @@
     ./services/ollama.nix
     ./services/opencode.nix
     ./services/python.nix
-    ./services/stylix.nix
 
     ./services/custom/noctalia.nix
   ];
