@@ -9,7 +9,7 @@
     };
     noctalia = {
       url = "github:noctalia-dev/noctalia/cachix";
-      inputs.nixpkgs.follows = "nixpkgs";
+      # inputs.nixpkgs.follows = "nixpkgs";
     };
     noctalia-v4 = {
       url = "github:noctalia-dev/noctalia/legacy-v4";
@@ -48,12 +48,6 @@
         nix-flatpak.nixosModules.nix-flatpak
         home-manager.nixosModules.home-manager
         stylix.nixosModules.stylix
-        {
-          home-manager.sharedModules = [
-            inputs.stylix.homeModules.stylix
-          ];
-        }
-        # stylix.homeModules.stylix
 
         ({ ... }: {
           nixpkgs.overlays = [
