@@ -30,6 +30,10 @@
   programs.xwayland.enable = true;   # Enables X11 support on Walyand
   hardware.uinput.enable = true;     # Enables applications to create virtual input devices
 
+  # For totem
+  services.gnome.tracker.enable = true;
+  services.gnome.tracker-miners.enable = true;
+
   environment.systemPackages = with pkgs; [
     # Hardware identification
     pciutils

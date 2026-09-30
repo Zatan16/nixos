@@ -16,5 +16,7 @@
     evince # PDF Viewer
     viewnior  # Image Viewer
     cheese # Camera
+    zenity
+    totem # Video Player
   ];
 }
