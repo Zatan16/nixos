@@ -18,5 +18,6 @@
     cheese # Camera
     zenity
     totem # Video Player
+    libqalculate # Calculator for calculator-plus Noctalia Plugin
   ];
 }

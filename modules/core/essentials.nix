@@ -34,6 +34,15 @@
   services.gnome.tracker.enable = true;
   services.gnome.tracker-miners.enable = true;
 
+  # To run non-nix dependencies
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [
+      stdenv.cc.cc
+      zlib
+    ];
+  };
+
   environment.systemPackages = with pkgs; [
     # Hardware identification
     pciutils
