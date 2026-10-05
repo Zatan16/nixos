@@ -31,14 +31,25 @@ in {
 
     # Noctalia V5
     (lib.mkIf (cfg.version == 5) {
-      services.greetd = {
+      services.displayManager.noctalia-greeter = {
         enable = true;
         settings = {
-          default_session = {
-            command = "${pkgs.cage}/bin/cage -s -- ${inputs.noctalia-greeter.packages.${pkgs.stdenv.hostPlatform.system}.default}/bin/noctalia-greeter";
-            user = "greeter";
-          };
+          cursor.size = 24;
+          keyboard.layout = "us";
+          idle = { timeout = 0; };
         };
+        cursorTheme = {
+          package = pkgs.bibata-cursors;
+          name = "Bibata-Modern-Ice";
+        };
+        extraArgs = [
+          "--no-dmps"
+        ];
+      };
+
+      systemd.services.greetd.environment = {
+        WLR_NO_HARDWARE_CURSORS = "1";
+        WLR_RENDERER = "vulkan";
       };
 
       users.extraUsers.greeter = {

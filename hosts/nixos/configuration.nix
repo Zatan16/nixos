@@ -92,7 +92,10 @@
     ];
   };
 
-  environment.pathsToLink = [ "/share/bash-completion" ];
+  # Make suspend instant
+  systemd.services.systemd-suspend.environment = {
+    SYSTEMD_SLEEP_FREEZE_USER_SESSIONS = "false";
+  };   
 
   # environment.variables = {
   #   GLX_VENDOR_LIBRARY_NAME = "mesa";
