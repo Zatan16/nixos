@@ -19,9 +19,13 @@
     "org.vinegarhq.Sober" = {
       name = "Sober";
       comment = "Roblox";
-      exec = "nvidia-offload flatpak run --branch=stable --arch=x86_64 --command=sober --file-forwarding org.vinegarhq.Sober -- @@u %u @@";
+      exec = "flatpak run --branch=stable --arch=x86_64 --command=sober --file-forwarding org.vinegarhq.Sober -- @@u %u @@";
       icon = "org.vinegarhq.Sober";
       categories = [ "Game" ];
+      mimeType = [
+        "x-scheme-handler/roblox"
+        "x-scheme-handler/roblox-player"
+      ];
     };
   };
 }
