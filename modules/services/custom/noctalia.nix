@@ -40,7 +40,7 @@ in {
         };
         cursorTheme = {
           package = pkgs.bibata-cursors;
-          name = "Bibata-Modern-Ice";
+          name = "Bibata-Modern-Classic";
         };
         extraArgs = [
           "--no-dmps"

@@ -15,6 +15,29 @@
 
     polarity = "dark";
 
+    cursor = {
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Classic";
+      size = 24;
+    };
+
+    # cursor = {
+    #   package = pkgs.cyberpunk-neon-cursors;
+    #   name = "Cyberpunk-Neon";
+    #   size = 24;
+    # };
+
+    # cursor = let 
+    #   cyberpunk-neon = pkgs.runCommand "cyberpunk-neon" {} ''
+    #     mkdir -p $out/share/icons
+    #     cp -r ${../../assets/cursors/Cyberpunk-Neon} $out/share/icons
+    #   '';
+    # in {
+    #   package = cyberpunk-neon;
+    #   name = "Cyberpunk-Neon";
+    #   size = 24;
+    # };
+
     # icons = {
     #   enable = true;
     #   package = pkgs.papirus-icon-theme;

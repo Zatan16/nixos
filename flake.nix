@@ -70,6 +70,13 @@
                   }
               );
             })
+
+            (final: prev: {
+              cyberpunk-neon-cursors = final.runCommand "cyperpunk-neon-cursors" {} ''
+                mkdir -p $out/share/icons
+                cp -r ${./assets/cursors/Cyberpunk-Neon} $out/share/icons/Cyberpunk-Neon
+              '';
+            })
           ];
         })
       ];
