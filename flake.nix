@@ -53,24 +53,6 @@
           nixpkgs.overlays = [
             torlink.overlays.default
 
-            # Patch xwayland-satellite bug for steam's context menus
-            (final: prev: {
-              xwayland-satellite = prev.xwayland-satellite.overrideAttrs (
-                _finalAttrs: prevAttrs:
-                  assert prevAttrs.version == "0.8.2"; {
-                    patches =
-                      (prevAttrs.patches or [])
-                      ++ [
-                        (final.fetchpatch2 {
-                          name = "xwayland-satellite-override-redirect-fix+pr=494.diff";
-                          url = "https://github.com/Supreeeme/xwayland-satellite/compare/55d2dd8ee2b84288778e953cdc1b096da21bb153~...9d51b59ff3c38464e7654096c9b10a8052a26b25.diff?full_index=1";
-                          hash = "sha256-VpdX1V9N0pkBJoRuqTwZiwJeW4h200TdsPN75xnBSEk=";
-                        })
-                      ];
-                  }
-              );
-            })
-
             (final: prev: {
               cyberpunk-neon-cursors = final.runCommand "cyperpunk-neon-cursors" {} ''
                 mkdir -p $out/share/icons
