@@ -26,11 +26,14 @@
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-  # Enable networking
   networking.networkmanager.enable = true;
 
-  # Set your time zone.
   time.timeZone = "Asia/Kolkata";
+  location.provider = "geoclue2";
+    services.geoclue2 = {
+    enable = true;
+    geoProviderUrl = "https://api.beacondb.net/v1/geolocate";
+  };   
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
