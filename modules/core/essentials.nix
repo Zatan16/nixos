@@ -57,11 +57,13 @@
 
     # System Monitoring & Stats
     btop
+    nvtopPackages.intel
     fastfetch
     sysstat
 
     # Clipboard
     wl-clipboard
+
     # wtype
     dotool
 
@@ -80,5 +82,9 @@
 
     # SSD Health
     smartmontools
+
+    pulseaudio
+
+    nix-search-tv
   ];
 }
