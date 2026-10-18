@@ -19,5 +19,10 @@
     zenity
     totem # Video Player
     libqalculate # Calculator for calculator-plus Noctalia Plugin
+    lmstudio
+    opencode
+    spotify
+    libreoffice
+    prismlauncher
   ];
 }
