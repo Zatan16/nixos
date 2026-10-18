@@ -36,9 +36,11 @@
       url = "github:noctalia-dev/noctalia-greeter";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    opencode.url = "github:Fractal-Tess/opencode-flake";
+    lmstudio.url = "github:Daaboulex/lmstudio-nix";
   };
 
-  outputs = { self, nixpkgs, niri-nix, stylix, nix-flatpak, home-manager, torlink, openclaw, ...}@inputs: {
+  outputs = { self, nixpkgs, niri-nix, stylix, nix-flatpak, home-manager, torlink, openclaw, opencode, lmstudio, ...}@inputs: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
@@ -52,6 +54,9 @@
         ({ ... }: {
           nixpkgs.overlays = [
             torlink.overlays.default
+
+            opencode.overlays.default
+            lmstudio.overlays.default
 
             (final: prev: {
               cyberpunk-neon-cursors = final.runCommand "cyperpunk-neon-cursors" {} ''
