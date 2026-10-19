@@ -68,7 +68,7 @@
   users.users."zayaan" = {
     isNormalUser = true;
     description = "Zayaan";
-    extraGroups = [ "networkmanager" "wheel" "input" "uinput" ];
+    extraGroups = [ "networkmanager" "wheel" "input" "uinput" "video" "render" ];
     # packages = with pkgs; [];
   };
 
