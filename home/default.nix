@@ -14,9 +14,13 @@
     ./programs/godot.nix
   ];
 
-  home.username = "zayaan";
-  home.homeDirectory = "/home/zayaan";
-  home.stateVersion = "26.05";
+  home = {
+    username = "zayaan";
+    homeDirectory = "/home/zayaan";
+    stateVersion = "26.05";
+    backupFileExtension = "backup";
+  };
+
   programs.home-manager.enable = true;
 
   nixpkgs.config.allowUnfree = true;
