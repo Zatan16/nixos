@@ -38,9 +38,13 @@
     };
     opencode.url = "github:Fractal-Tess/opencode-flake";
     lmstudio.url = "github:Daaboulex/lmstudio-nix";
+    freesmlauncher = {
+      url = "github:FreesmTeam/FreesmLauncher";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, niri-nix, stylix, nix-flatpak, home-manager, torlink, openclaw, opencode, lmstudio, ...}@inputs: {
+  outputs = { self, nixpkgs, niri-nix, stylix, nix-flatpak, home-manager, torlink, openclaw, opencode, lmstudio, freesmlauncher, ...}@inputs: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
@@ -54,6 +58,8 @@
         ({ ... }: {
           nixpkgs.overlays = [
             torlink.overlays.default
+
+            # freesmlauncher.overlays.default
 
             opencode.overlays.default
             lmstudio.overlays.default

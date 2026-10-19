@@ -24,5 +24,6 @@
     spotify
     libreoffice
     prismlauncher
+    # freesmlauncher
   ];
 }
