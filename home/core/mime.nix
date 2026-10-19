@@ -4,7 +4,7 @@
     defaultApplications = {
       "inode/directory" = "thunar.desktop";
       "text/html" = "gedit.desktop";
-      "application/pdf" = "evince.desktop";
+      "application/pdf" = "org.gnome.Evince.desktop";
       "text/*" = "gedit.desktop";
       "image/*" = "viewnior.desktop";
       "application/octet-stream" = "gedit.desktop";  # Extensionless File
