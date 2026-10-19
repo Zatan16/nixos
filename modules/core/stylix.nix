@@ -24,7 +24,7 @@
 
     targets = {
       gnome.enable = true;
-      gtk.enable = true;
+      gtk.enable = false;
     };
   };
 }
