@@ -6,8 +6,6 @@
     ./core/desktop-entries.nix
 
     ./programs/file-manager.nix
-    ./programs/kitty.nix
-    ./programs/starship.nix
     ./programs/vscode.nix
     ./programs/godot.nix
   ];

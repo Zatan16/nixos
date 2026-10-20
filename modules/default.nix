@@ -22,5 +22,9 @@
     ./services/python.nix
 
     ./services/custom/noctalia.nix
+
+    ./other/kitty.nix
+    # ./other/starship.nix
+
   ];
 }

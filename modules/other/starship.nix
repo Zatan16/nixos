@@ -10,9 +10,9 @@
 
   programs.zsh = {
     enable = true;
-    autosuggestion.enable = true;
+    autosuggestions.enable = true;
     enableCompletion = true;
   };
 
-  programs.bash.enable = true;
+  programs.bash.enable = false;
 }
