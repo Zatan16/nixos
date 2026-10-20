@@ -42,9 +42,14 @@
       url = "github:FreesmTeam/FreesmLauncher";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    loaf = {
+      url = "github:Zatan16/loaf-fm";
+      # url = "path: ./flakes/loaf-fm";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, niri-nix, stylix, nix-flatpak, home-manager, torlink, openclaw, opencode, lmstudio, freesmlauncher, ...}@inputs: {
+  outputs = { self, nixpkgs, niri-nix, stylix, nix-flatpak, home-manager, torlink, openclaw, opencode, lmstudio, freesmlauncher, loaf, ...}@inputs: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
@@ -58,6 +63,7 @@
         ({ ... }: {
           nixpkgs.overlays = [
             torlink.overlays.default
+            loaf.overlays.default
 
             # freesmlauncher.overlays.default
 

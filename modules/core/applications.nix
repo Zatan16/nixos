@@ -13,6 +13,7 @@
     glib
     scrcpy
     baobab
+    loaf
   ];
 
   programs.steam.enable = true;
