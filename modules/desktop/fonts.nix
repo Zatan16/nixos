@@ -5,6 +5,8 @@
     cozette
   ];
 
-  fonts.fontconfig.enable = true;
-  fonts.fontconfig.allowBitmaps = true;
+  fonts.fontconfig = {
+    enable = true;
+    allowBitmaps = true;
+  };
 }

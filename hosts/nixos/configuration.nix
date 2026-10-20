@@ -101,8 +101,7 @@
   };   
 
   # environment.variables = {
-  #   GLX_VENDOR_LIBRARY_NAME = "mesa";
-  #   EGL_VENDOR_LIBRARY_FILENAMES = "/run/opengl-driver/share/glvnd/egl_vendor.d/50_mesa.json";
+  #   GTK_THEME = "Adwaita-dark";
   # };
 
   # Some programs need SUID wrappers, can be configured further or are

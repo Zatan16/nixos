@@ -8,6 +8,7 @@
     extraConfig = "
     ${builtins.readFile ../../dotfiles/kitty/noctalia.conf}
       scrollback_lines 10000
+      font_size 12
     ";
 
     settings = {

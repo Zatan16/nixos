@@ -24,6 +24,7 @@
     spotify
     libreoffice
     prismlauncher
+    nwg-look
     # freesmlauncher
   ];
 }

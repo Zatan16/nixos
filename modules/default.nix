@@ -8,7 +8,6 @@
     ./core/nix-cleanup.nix
     ./core/silent-boot.nix
     # ./core/virtualisation.nix
-    ./core/stylix.nix
     # ./core/android-sdk.nix
 
     ./desktop/niri.nix
