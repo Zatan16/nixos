@@ -30,9 +30,13 @@
   programs.xwayland.enable = true;   # Enables X11 support on Walyand
   hardware.uinput.enable = true;     # Enables applications to create virtual input devices
 
+  # services.acpid.enable = true;
+
   # For totem
-  services.gnome.tracker.enable = true;
-  services.gnome.tracker-miners.enable = true;
+  services.gnome.tinysparql.enable = true;
+  services.gnome.localsearch.enable = true;
+
+  programs.umbriel.enable = true;
 
   # To run non-nix dependencies
   programs.nix-ld = {
@@ -57,7 +61,7 @@
 
     # System Monitoring & Stats
     btop
-    nvtopPackages.intel
+    nvtopPackages.full
     fastfetch
     sysstat
 
@@ -96,5 +100,7 @@
     adw-gtk3
 
     tree
+
+    acpid
   ];
 }
