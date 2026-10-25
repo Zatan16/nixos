@@ -54,10 +54,10 @@
     };
 
     # Needed so Plymouth starts early (and shows the LUKS prompt if you use one)
-    initrd.systemd.enable = true;
-    initrd.verbose = false;
+    # initrd.systemd.enable = true;
+    # initrd.verbose = false;
 
-    consoleLogLevel = 3;
+    consoleLogLevel = 0;
     kernelParams = [
       "quiet"
       "splash"

@@ -43,8 +43,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     loaf = {
-      url = "github:Zatan16/loaf-fm";
-      # url = "path: ./flakes/loaf-fm";
+      # url = "github:Zatan16/loaf-fm";
+      url = "github:m-uvex/loaf-fm/dev";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
