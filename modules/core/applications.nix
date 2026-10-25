@@ -20,4 +20,8 @@
   programs.gpu-screen-recorder.enable = true;
   programs.kdeconnect.enable = true;
   programs.gnome-disks.enable = true;
+
+  environment.shellAliases = {
+    gparted = "sudo -E gparted";
+  };
 }

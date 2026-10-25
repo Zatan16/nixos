@@ -22,7 +22,9 @@
     spotify
     libreoffice
     prismlauncher
-    nwg-look
+    nwg-look 
+    anki texliveFull
+    gparted-full
     # freesmlauncher
   ];
 }
