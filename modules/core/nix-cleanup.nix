@@ -5,9 +5,18 @@
   boot.loader.systemd-boot.configurationLimit = 5;
 
   # Automatically clean up orphaned packages from deleted generations
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 14d";
+  # nix.gc = {
+  #   automatic = true;
+  #   dates = "weekly";
+  #   options = "--delete-older-than 14d";
+  # };
+
+  programs.nh = {
+    enable = true;
+    clean = {
+      enable = true;
+      extraArgs = "--keep 5 --keep-since 3d";
+    };
+    flake = "/etc/nixos";
   };
 }
