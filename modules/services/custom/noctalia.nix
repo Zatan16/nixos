@@ -6,47 +6,41 @@ in {
   options.services.noctalia = {
     enable = lib.mkEnableOption "Enable Noctalia Shell and Greeter";
 
-    version = lib.mkOption {
-      type = lib.types.enum [ 4 5 ];
-      default = 5;
-      description = "Version of Noctalia to configure";
+    # version = lib.mkOption {
+    #   type = lib.types.enum [ 4 5 ];
+    #   default = 5;
+    #   description = "Version of Noctalia to use";
+    # };
+
+    v5 = lib.mkEnableOption {
+      default = false;
+      description = "Enable Noctalia V5";
+    };
+
+    v4 = lib.mkEnableOption {
+      default = false;
+      description = "Enable Noctalia V4";
     };
   };
 
   config = lib.mkIf cfg.enable (lib.mkMerge [
     # Noctalia V4
-    (lib.mkIf (cfg.version == 4) {
+    (lib.mkIf (cfg.v4) {
       environment.systemPackages = [
         inputs.noctalia-v4.packages.${pkgs.stdenv.hostPlatform.system}.default
       ];
 
-      services.displayManager.noctalia-greeter = {
-        enable = true;
-        settings = {
-          session.default = "niri-session";
-          user.default = "zayaan";
-        };
-      };
+      # services.displayManager.noctalia-greeter = {
+      #   enable = true;
+      #   settings = {
+      #     session.default = "niri-session";
+      #     user.default = "zayaan";
+      #   };
+      # };
     })
 
     # Noctalia V5
-    (lib.mkIf (cfg.version == 5) {
-      services.displayManager.noctalia-greeter = {
-        enable = true;
-        settings = {
-          cursor.size = 24;
-          keyboard.layout = "us";
-          idle = { timeout = 0; };
-        };
-        cursorTheme = {
-          package = pkgs.bibata-cursors;
-          name = "Bibata-Modern-Classic";
-        };
-        extraArgs = [
-          "--no-dmps"
-        ];
-      };
-
+    (lib.mkIf (cfg.v5) {
       systemd.services.greetd.environment = {
         WLR_NO_HARDWARE_CURSORS = "1";
         WLR_RENDERER = "vulkan";
@@ -66,5 +60,23 @@ in {
         };
       };
     })
+
+    {
+      services.displayManager.noctalia-greeter = {
+        enable = true;
+        settings = {
+          cursor.size = 24;
+          keyboard.layout = "us";
+          idle = { timeout = 0; };
+        };
+        cursorTheme = {
+          package = pkgs.bibata-cursors;
+          name = "Bibata-Modern-Classic";
+        };
+        extraArgs = [
+          "--no-dmps"
+        ];
+      };
+    }
   ]);
 }

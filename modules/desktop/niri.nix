@@ -14,6 +14,7 @@
 
   services.noctalia = {
     enable = true;
-    version = 5;
+    v5 = true;
+    # v4 = true;
   };
 }
