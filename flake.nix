@@ -13,7 +13,6 @@
     };
     noctalia-v4 = {
       url = "github:noctalia-dev/noctalia/legacy-v4";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.7.0";
     stylix = {
@@ -47,15 +46,20 @@
       url = "github:m-uvex/loaf-fm/dev";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    umbriel = {
+      url = "github:noctalia-dev/umbriel";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, niri-nix, stylix, nix-flatpak, home-manager, torlink, openclaw, opencode, lmstudio, freesmlauncher, loaf, ...}@inputs: {
+  outputs = { self, nixpkgs, niri-nix, stylix, nix-flatpak, home-manager, torlink, openclaw, opencode, lmstudio, freesmlauncher, loaf, umbriel, ...}@inputs: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
       modules = [
         ./hosts/nixos/configuration.nix
         niri-nix.nixosModules.default
+        umbriel.nixosModules.default
         nix-flatpak.nixosModules.nix-flatpak
         home-manager.nixosModules.home-manager
         stylix.nixosModules.stylix
