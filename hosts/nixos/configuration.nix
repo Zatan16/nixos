@@ -84,18 +84,6 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  nix.settings = {
-    substituters = [ 
-      "https://cache.nixos-cuda.org"
-      "https://noctalia.cachix.org"
-    ];
-
-    trusted-public-keys = [
-      "cache.nixos-cuda.org:74DUi4Ye579gUqzH4ziL9IyiJBlDpMRn9MBN8oNan9M="
-      "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
-    ];
-  };
-
   # Make suspend instant
   systemd.services.systemd-suspend.environment = {
     SYSTEMD_SLEEP_FREEZE_USER_SESSIONS = "false";
