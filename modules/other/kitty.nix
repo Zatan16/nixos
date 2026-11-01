@@ -17,9 +17,4 @@
       auto_sync = false;
     };
   };
-
-  programs.zsh.interactiveShellInit = ''
-    bindkey '^R' undefined-key
-    bindkey '^F' atuin-search
-  '';
 }

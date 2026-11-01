@@ -76,7 +76,15 @@
   home-manager.users.zayaan = import ../../home;
   home-manager.extraSpecialArgs = { inherit inputs; };
 
-  programs.zsh.enable = true;
+  programs.zsh = {
+    enable = true;
+    interactiveShellInit = ''
+      bindkey '^R' undefined-key
+      bindkey '^F' atuin-search
+      bindkey '^[[1;5C' forward-word
+      bindkey '^[[1;5D' backward-word
+    '';
+  };
   users.defaultUserShell = pkgs.zsh;
 
   # Allow unfree packages
