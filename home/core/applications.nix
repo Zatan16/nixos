@@ -25,6 +25,7 @@
     nwg-look 
     anki texliveFull
     gparted-full
+    powertop
     # freesmlauncher
   ];
 }
