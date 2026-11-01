@@ -101,6 +101,21 @@
     SYSTEMD_SLEEP_FREEZE_USER_SESSIONS = "false";
   };   
 
+  services.keyd = {
+    enable = true;
+    keyboards = {
+      default = {
+        ids = [ "*" ];
+        settings = {
+          alt = {
+            left = "home";
+            right = "end";
+          };
+        };
+      };
+    };
+  };
+
   # environment.variables = {
   #   GTK_THEME = "Adwaita-dark";
   # };
