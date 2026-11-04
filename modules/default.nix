@@ -8,6 +8,7 @@
     ./core/nix-cleanup.nix
     ./core/silent-boot.nix
     ./core/waydroid.nix
+    ./core/power-management.nix
     # ./core/virtualisation.nix
     # ./core/android-sdk.nix
 
@@ -25,6 +26,7 @@
     ./services/custom/noctalia.nix
 
     ./other/kitty.nix
+    ./other/dolphin.nix
     # ./other/starship.nix
 
   ];
