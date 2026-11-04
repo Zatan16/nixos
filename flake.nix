@@ -43,7 +43,7 @@
     };
     loaf = {
       # url = "github:Zatan16/loaf-fm";
-      url = "github:m-uvex/loaf-fm/dev";
+      url = "github:m-uvex/loaf-fm";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     umbriel = {
@@ -64,7 +64,7 @@
         home-manager.nixosModules.home-manager
         stylix.nixosModules.stylix
 
-        ({ ... }: {
+        {
           nixpkgs.overlays = [
             torlink.overlays.default
             loaf.overlays.default
@@ -74,14 +74,32 @@
             opencode.overlays.default
             lmstudio.overlays.default
 
+            # Installing neon-cursors
             (final: prev: {
               cyberpunk-neon-cursors = final.runCommand "cyperpunk-neon-cursors" {} ''
                 mkdir -p $out/share/icons
                 cp -r ${./assets/cursors/Cyberpunk-Neon} $out/share/icons/Cyberpunk-Neon
               '';
             })
+
+            # Dolphin overlay for applications.menu for open-with menu
+            (final: prev: {
+              kdePackages = prev.kdePackages.overrideScope (kfinal: kprev: {
+                dolphin = prev.symlinkJoin {
+                  name = "dolphin-wrapped";
+                  paths = [ kprev.dolphin ];
+                  nativeBuildInputs = [ prev.makeWrapper ];
+                  postBuild = ''
+                    rm $out/bin/dolphin
+                    makeWrapper ${kprev.dolphin}/bin/dolphin $out/bin/dolphin \
+                      --set XDG_CONFIG_DIRS "${kprev.plasma-workspace}/etc/xdg:$XDG_CONFIG_DIRS" \
+                      --run "${kprev.kservice}/bin/kbuildsycoca6 --noincremental ${kprev.plasma-workspace}/etc/xdg/menus/plasma-applications.menu"
+                  '';
+                };
+              });
+            })
           ];
-        })
+        }
 
         {
           nix.settings = {
