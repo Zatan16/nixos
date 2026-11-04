@@ -81,5 +81,9 @@
     tree
 
     acpid
+
+    keyd
+
+    linuxKernel.packages.linux_7_3.turbostat
   ];
 }
