@@ -11,7 +11,6 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelPackages = pkgs.linuxPackages_7_3;
 
   boot.kernelModules = [ "rtw89_8852be" ];
   hardware.enableAllFirmware = true;

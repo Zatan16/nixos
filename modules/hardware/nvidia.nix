@@ -20,7 +20,7 @@
 
     open = true;
     nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.new_feature;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
 
     prime = {
       offload = {
