@@ -9,6 +9,7 @@
     ./core/silent-boot.nix
     ./core/waydroid.nix
     ./core/power-management.nix
+    ./core/phone-connect.nix
     # ./core/virtualisation.nix
     # ./core/android-sdk.nix
 
