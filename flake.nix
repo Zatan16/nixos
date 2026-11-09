@@ -3,62 +3,35 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    niri-nix = {
-      url = "git+https://codeberg.org/BANanaD3V/niri-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    noctalia = {
-      url = "github:noctalia-dev/noctalia/cachix";
-      # inputs.nixpkgs.follows = "nixpkgs";
-    };
-    noctalia-v4 = {
-      url = "github:noctalia-dev/noctalia/legacy-v4";
-    };
+    niri.url = "github:niri-wm/niri";
+    noctalia.url = "github:noctalia-dev/noctalia/cachix";
+    noctalia-v4.url = "github:noctalia-dev/noctalia/legacy-v4";
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.7.0";
-    stylix = {
-      url = "github:danth/stylix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    home-manager = {
-      url = "github:nix-community/home-manager/master";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    stylix.url = "github:danth/stylix";
+    home-manager.url = "github:nix-community/home-manager/master";
+    openclaw.url = "github:Scout-DJ/openclaw-nix";
+    noctalia-greeter.url = "github:noctalia-dev/noctalia-greeter";
+    opencode.url = "github:dan-online/opencode-nix";
+    lmstudio.url = "github:Daaboulex/lmstudio-nix";
+    freesmlauncher.url = "github:FreesmTeam/FreesmLauncher";
+    umbriel.url = "github:noctalia-dev/umbriel";
+
     torlink = {
       url = "github:baairon/torlink";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    openclaw = {
-      url = "github:Scout-DJ/openclaw-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    noctalia-greeter = {
-      url = "github:noctalia-dev/noctalia-greeter";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    opencode.url = "github:Fractal-Tess/opencode-flake";
-    lmstudio.url = "github:Daaboulex/lmstudio-nix";
-    freesmlauncher = {
-      url = "github:FreesmTeam/FreesmLauncher";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     loaf = {
       # url = "github:Zatan16/loaf-fm";
       url = "github:m-uvex/loaf-fm";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    umbriel = {
-      url = "github:noctalia-dev/umbriel";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, niri-nix, stylix, nix-flatpak, home-manager, torlink, openclaw, opencode, lmstudio, freesmlauncher, loaf, umbriel, ...}@inputs: {
+  outputs = { self, nixpkgs, niri, stylix, nix-flatpak, home-manager, torlink, openclaw, opencode, lmstudio, freesmlauncher, loaf, umbriel, ...}@inputs: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
       modules = [
         ./hosts/nixos/configuration.nix
-        niri-nix.nixosModules.default
         umbriel.nixosModules.default
         nix-flatpak.nixosModules.nix-flatpak
         home-manager.nixosModules.home-manager
@@ -73,6 +46,7 @@
 
             opencode.overlays.default
             lmstudio.overlays.default
+            niri.overlays.default
 
             # Installing neon-cursors
             (final: prev: {
