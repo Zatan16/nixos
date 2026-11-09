@@ -41,6 +41,7 @@
 
   environment.systemPackages = with pkgs; [
     gtk3
+    gtk-layer-shell
     gobject-introspection
     adwaita-icon-theme
     hicolor-icon-theme
