@@ -25,6 +25,7 @@
     anki texliveFull
     gparted-full
     powertop
+    zed-editor
     # freesmlauncher
   ];
 }
