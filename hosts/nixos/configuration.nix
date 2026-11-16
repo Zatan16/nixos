@@ -48,6 +48,9 @@
     isNormalUser = true;
     description = "Zayaan";
     extraGroups = [ "networkmanager" "wheel" "input" "uinput" "video" "render" ];
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICAM841SWKcsFlcf7wQ6WF4RZ20v1ni+vQleMyLo3q5G u0_a497@localhost"
+    ];
   };
 
   home-manager.users.zayaan = import ../../home;
@@ -88,6 +91,15 @@
           };
         };
       };
+    };
+  };
+
+  services.openssh = {
+    enable = true;
+    settings = {
+      PasswordAuthentication = false;   # keys only
+      KbdInteractiveAuthentication = false;
+      PermitRootLogin = "no";
     };
   };
 
