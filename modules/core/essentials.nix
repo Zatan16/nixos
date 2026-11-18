@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   # imports = [ ./python.nix ];
@@ -25,7 +25,7 @@
     ];
   };
 
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = (with pkgs; [
     # Hardware identification
     pciutils
     usbutils
@@ -76,6 +76,8 @@
 
     tree
 
-    linuxPackages.turbostat
+    
+  ]) ++ [
+    config.boot.kernelPackages.turbostat
   ];
 }
