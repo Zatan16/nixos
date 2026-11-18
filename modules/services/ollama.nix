@@ -9,14 +9,11 @@
     environmentVariables = {
       OLLAMA_CONTEXT_LENGTH = "65536";
       OLLAMA_FLASH_ATTENTION = "1";
-    };
-
-    package = pkgs.ollama-cuda;
-
-    environmentVariables = {
       OLLAMA_MAX_CONCURRENT_DOWNLOADS = "1";
       GODEBUG = "netdns=go";  # Force iPv4
     };
+
+    package = pkgs.ollama-cuda;
   };
 
   virtualisation.podman.enable = true;

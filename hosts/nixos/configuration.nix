@@ -55,6 +55,7 @@
 
   home-manager.users.zayaan = import ../../home;
   home-manager.extraSpecialArgs = { inherit inputs; };
+  home-manager.useGlobalPkgs = true;
 
   programs.zsh = {
     enable = true;

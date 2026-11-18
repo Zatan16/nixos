@@ -4,23 +4,10 @@ let
   cfg = config.services.noctalia;
 in {
   options.services.noctalia = {
-    enable = lib.mkEnableOption "Enable Noctalia Shell and Greeter";
+    enable = lib.mkEnableOption "Noctalia Shell and Greeter";
 
-    # version = lib.mkOption {
-    #   type = lib.types.enum [ 4 5 ];
-    #   default = 5;
-    #   description = "Version of Noctalia to use";
-    # };
-
-    v5 = lib.mkEnableOption {
-      default = false;
-      description = "Enable Noctalia V5";
-    };
-
-    v4 = lib.mkEnableOption {
-      default = false;
-      description = "Enable Noctalia V4";
-    };
+    v5 = lib.mkEnableOption "Noctlaia V5";
+    v4 = lib.mkEnableOption "Noctalia V4";
   };
 
   config = lib.mkIf cfg.enable (lib.mkMerge [

@@ -19,8 +19,6 @@
 
   programs.home-manager.enable = true;
 
-  nixpkgs.config.allowUnfree = true;
-
   home.file.".ssh/config".text = ''
     Host phone
       HostName 192.168.1.5

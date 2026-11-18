@@ -5,7 +5,6 @@
 
   environment.systemPackages = with pkgs; [
     git
-    alacritty
     vivaldi
     vivaldi-ffmpeg-codecs
     android-tools
@@ -15,6 +14,8 @@
     baobab
     loaf
   ];
+
+  programs.luciole.enable = true;
 
   programs.steam.enable = true;
   programs.gpu-screen-recorder.enable = true;

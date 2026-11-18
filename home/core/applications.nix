@@ -4,7 +4,6 @@
   # imports = [ ./vscode.nix ./file-manager.nix ];
 
   home.packages = with pkgs; [
-    # alacritty
     vivaldi
     vivaldi-ffmpeg-codecs
     gedit
@@ -26,6 +25,5 @@
     gparted-full
     powertop
     zed-editor
-    # freesmlauncher
   ];
 }

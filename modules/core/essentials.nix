@@ -9,7 +9,6 @@
   programs.xwayland.enable = true;   # Enables X11 support on Walyand
   hardware.uinput.enable = true;     # Enables applications to create virtual input devices
 
-  # services.acpid.enable = true;
 
   # For totem
   services.gnome.tinysparql.enable = true;
@@ -58,9 +57,6 @@
     # Xorg in Wayland
     xwayland-satellite
 
-    # Intel Driver for VAAPI
-    intel-media-driver
-
     # NodeJS
     nodejs_22
 
@@ -80,10 +76,6 @@
 
     tree
 
-    acpid
-
-    keyd
-
-    linuxKernel.packages.linux_7_3.turbostat
+    linuxPackages.turbostat
   ];
 }
