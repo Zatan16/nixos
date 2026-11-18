@@ -26,7 +26,6 @@
     ./services/custom/noctalia.nix
 
     ./other/kitty.nix
-    ./other/dolphin.nix
     # ./other/starship.nix
 
   ];
