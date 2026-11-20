@@ -75,8 +75,6 @@
     adw-gtk3
 
     tree
-
-    
   ]) ++ [
     config.boot.kernelPackages.turbostat
   ];

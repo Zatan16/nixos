@@ -6,7 +6,7 @@ in {
   options.services.noctalia = {
     enable = lib.mkEnableOption "Noctalia Shell and Greeter";
 
-    v5 = lib.mkEnableOption "Noctlaia V5";
+    v5 = lib.mkEnableOption "Noctalia V5";
     v4 = lib.mkEnableOption "Noctalia V4";
   };
 
