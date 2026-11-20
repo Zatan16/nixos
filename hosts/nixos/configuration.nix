@@ -78,22 +78,22 @@
     SYSTEMD_SLEEP_FREEZE_USER_SESSIONS = "false";
   };
 
-  services.keyd = {
-    enable = true;
-    keyboards = {
-      default = {
-        ids = [
-          "k:*"
-        ];
-        settings = {
-          alt = {
-            left = "home";
-            right = "end";
-          };
-        };
-      };
-    };
-  };
+  # services.keyd = {
+  #   enable = true;
+  #   keyboards = {
+  #     default = {
+  #       ids = [
+  #         "k:*"
+  #       ];
+  #       settings = {
+  #         alt = {
+  #           left = "home";
+  #           right = "end";
+  #         };
+  #       };
+  #     };
+  #   };
+  # };
 
   services.openssh = {
     enable = true;
