@@ -25,5 +25,9 @@
     gparted-full
     powertop
     zed-editor
+    mpv
+    haruna
+    celluloid
+    vlc
   ];
 }
