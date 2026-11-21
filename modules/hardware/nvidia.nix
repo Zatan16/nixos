@@ -17,6 +17,7 @@
     modesetting.enable = true;
     powerManagement.enable = true;
     powerManagement.finegrained = true;
+    powerManagement.kernelSuspendNotifier = true;
 
     open = true;
     nvidiaSettings = true;
